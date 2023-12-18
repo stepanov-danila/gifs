@@ -1,7 +1,7 @@
 export const data = [
   {
     id: "1",
-    date: "12.17.2023",
+    date: "2023-12-18",
     gift: "Gift 1",
     background: "red",
   },
