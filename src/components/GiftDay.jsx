@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { CardGiftcard, Lock, LockOpen } from '@mui/icons-material';
 import { Button as MuiButton, Card as MuiCard, Dialog, Typography as MuiTypography } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 
 const Typography = styled(MuiTypography)`
   position: absolute;
@@ -9,6 +9,7 @@ const Typography = styled(MuiTypography)`
   left: 10px;
   color: white;
 `
+
 const GetText = styled(MuiTypography)`
   position: absolute;
   bottom: 40px;
@@ -64,13 +65,16 @@ const GiftIcon = styled.div`
 `
 
 const GiftDay = ({
+  id, 
   date,
   gift,
   background,
+  locked,
+  recieved,
+  handleLock,
+  handleRecieve
 }) => {
   const [open, setOpen] = useState(false);
-  const [locked, setLocked] = useState(true);
-  const [recieved, setRecieved] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -88,26 +92,22 @@ const GiftDay = ({
 
     const gitfDayDate = new Date(date);
 
-    console.log(gitfDayDate);
-
     const gitfDayDateDay = gitfDayDate.getDate();
     const gitfDayDateMonth = gitfDayDate.getMonth();
     const gitfDayDateYear = gitfDayDate.getFullYear();
 
+    console.log(locked);
     if (
+      locked &&
       todayDay >= gitfDayDateDay
       && todayMonth >= gitfDayDateMonth
       && todayYear >= gitfDayDateYear
     ) {
       setTimeout(() => {
-        setLocked(false)
+        handleLock(id);
       }, 1000);
-    } else {
-      setTimeout(() => {
-        setLocked(true)
-      }, 1000);
-    }
-  }, [date]);  
+    } 
+  }, [id, date]);  
 
   return (
     <>
@@ -148,7 +148,7 @@ const GiftDay = ({
           <MuiButton onClick={() => {
             handleClose();            
             setTimeout(() => {
-              setRecieved(true);
+              handleRecieve(id);
             }, 500);
           }}>OK</MuiButton>
         </Card>
@@ -157,4 +157,4 @@ const GiftDay = ({
   )
 }
 
-export default GiftDay
+export default memo(GiftDay)

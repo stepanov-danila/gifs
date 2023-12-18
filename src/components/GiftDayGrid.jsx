@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { memo } from 'react';
 import GiftDay from './GiftDay';
 
 const GiftDayContainer = styled.div`
@@ -12,13 +12,16 @@ const GiftDayContainer = styled.div`
   padding: 10px;
 ` 
 
-const GiftDayGrid = ({ giftDays }) => {
+const GiftDayGrid = ({ giftDays, handleLock, handleRecieve }) => {
   return (
     <GiftDayContainer>
       {giftDays.map(
         (giftDay) => (
           <GiftDay
+            key={giftDay.id}
             {...giftDay}
+            handleLock={handleLock}
+            handleRecieve={handleRecieve}
           />
         )
       )}
@@ -26,4 +29,4 @@ const GiftDayGrid = ({ giftDays }) => {
   )
 }
 
-export default GiftDayGrid
+export default memo(GiftDayGrid);
