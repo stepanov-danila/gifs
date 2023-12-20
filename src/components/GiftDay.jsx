@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { CardGiftcard, Lock, LockOpen } from '@mui/icons-material';
+import { CardGiftcard, Lock, LockClock, LockOpen } from '@mui/icons-material';
 import { Button as MuiButton, Card as MuiCard, Dialog, Typography as MuiTypography } from '@mui/material';
 import React, { memo, useEffect, useState } from 'react';
 
@@ -8,6 +8,9 @@ const Typography = styled(MuiTypography)`
   top: 10px;
   left: 10px;
   color: white;
+  font-family: 'Whisper', cursive;
+  font-size: 24px;
+  line-height: 1;
 `
 
 const GetText = styled(MuiTypography)`
@@ -21,8 +24,7 @@ const GetText = styled(MuiTypography)`
 `
 
 const Card = styled(MuiCard)`
-  height: 400px;
-  width: 400px;  
+
 `
 const RecievedText = styled(MuiTypography)`
   color: white;
@@ -49,6 +51,11 @@ const GiftDayContainer = styled(MuiButton)`
   justify-content: center;
   border-radius: 10px;  
   position: relative;
+  font-family: 'Whisper', cursive;
+  
+  &.Mui-disabled {
+    color: #fff;
+  }
 `
 
 const LockIcon = styled.div`
@@ -105,9 +112,9 @@ const GiftDay = ({
     ) {
       setTimeout(() => {
         handleLock(id);
-      }, 1000);
+      }, 300);
     } 
-  }, [id, date]);  
+  }, [id, date, handleLock, locked]);  
 
   return (
     <>
@@ -122,20 +129,9 @@ const GiftDay = ({
             <RecievedText>Получен</RecievedText>
           </>
           : (
-            <>
-              <LockIcon>
-                {locked ? <Lock /> : <LockOpen />}
-              </LockIcon>
-              <GiftIcon>
-                <CardGiftcard />
-              </GiftIcon>
-              
-              {
-                !locked && (
-                  <GetText>Получить подарок</GetText>
-                )
-              } 
-            </>       
+            <GiftIcon>
+              {locked ? <LockClock /> : <CardGiftcard />}              
+            </GiftIcon>       
           )
         }
       </GiftDayContainer>
@@ -145,7 +141,7 @@ const GiftDay = ({
       >
         <Card>
           <Typography>{gift}</Typography>
-          <MuiButton onClick={() => {
+          <MuiButton variant='contained' onClick={() => {
             handleClose();            
             setTimeout(() => {
               handleRecieve(id);
