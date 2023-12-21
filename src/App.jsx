@@ -7,6 +7,7 @@ import Light from './components/Light';
 
 const AppContainer = styled.main`
   position: relative;
+  overflow: hidden;
 ` 
 
 const App = () => {

@@ -107,7 +107,6 @@ const GiftDay = ({
         onClick={handleClickOpen}
         disabled={recieved || locked}
       >
-        {date === "2023-12-31" && <Light /> }
         <Typography>{new Date(date).toLocaleDateString()}</Typography>
         {recieved ?
           <>

@@ -5,8 +5,8 @@ export const LightContainer = styled.div`
   position: absolute;
   z-index: 10;
   top: 0;
-  right: 0;
-  left: 0;
+  right: -20px;
+  left: -20px;
 ` 
 
 const Light = () => {
