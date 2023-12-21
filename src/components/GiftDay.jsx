@@ -1,26 +1,18 @@
 import styled from '@emotion/styled'
-import { CardGiftcard, Lock, LockClock, LockOpen } from '@mui/icons-material';
 import { Button as MuiButton, Card as MuiCard, Dialog, Typography as MuiTypography } from '@mui/material';
 import React, { memo, useEffect, useState } from 'react';
+import { MdOutlineLockClock } from "react-icons/md";
+import { IoMdGift } from "react-icons/io";
+
 
 const Typography = styled(MuiTypography)`
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 15px;
+  left: 15px;
   color: white;
-  font-family: 'Whisper', cursive;
+  font-family: 'Archivo Black', cursive;
   font-size: 24px;
   line-height: 1;
-`
-
-const GetText = styled(MuiTypography)`
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  color: white;
-  font-size: 14px;
-  width: 100%;
 `
 
 const Card = styled(MuiCard)`
@@ -34,10 +26,7 @@ const RecievedText = styled(MuiTypography)`
   margin: 0;
   border: 4px solid white;
   border-radius: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-25deg);
+  transform: rotate(-25deg);
   padding: 5px 15px;
   text-transform: uppercase;
 `
@@ -51,20 +40,14 @@ const GiftDayContainer = styled(MuiButton)`
   justify-content: center;
   border-radius: 10px;  
   position: relative;
-  font-family: 'Whisper', cursive;
+  font-family: 'Archivo Black', cursive;
   
   &.Mui-disabled {
     color: #fff;
   }
 `
-
-const LockIcon = styled.div`
-  position: absolute;
-  top: 10px;
-  right: 10px;  
-`
-
-const GiftIcon = styled.div`
+const Icon = styled.div`
+  margin-top: 10px;
   svg {
     height: 80px;
     width: 80px;
@@ -129,9 +112,9 @@ const GiftDay = ({
             <RecievedText>Получен</RecievedText>
           </>
           : (
-            <GiftIcon>
-              {locked ? <LockClock /> : <CardGiftcard />}              
-            </GiftIcon>       
+            <Icon>
+              {locked ? <MdOutlineLockClock /> : <IoMdGift />}              
+            </Icon>       
           )
         }
       </GiftDayContainer>
@@ -146,7 +129,7 @@ const GiftDay = ({
             setTimeout(() => {
               handleRecieve(id);
             }, 500);
-          }}>OK</MuiButton>
+          }}>Получить подарок</MuiButton>
         </Card>
       </Dialog>
     </>
