@@ -3,6 +3,7 @@ import { Button as MuiButton, Card as MuiCard, Dialog, Typography as MuiTypograp
 import React, { memo, useEffect, useState } from 'react';
 import { MdOutlineLockClock } from "react-icons/md";
 import { IoMdGift } from "react-icons/io";
+import Light from './Light';
 
 
 const Typography = styled(MuiTypography)`
@@ -106,6 +107,7 @@ const GiftDay = ({
         onClick={handleClickOpen}
         disabled={recieved || locked}
       >
+        {date === "2023-12-31" && <Light /> }
         <Typography>{new Date(date).toLocaleDateString()}</Typography>
         {recieved ?
           <>

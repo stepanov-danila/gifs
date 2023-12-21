@@ -7,4 +7,115 @@ body {
   box-sizing: border-box;
 }
 
+
+:root {
+	--blink-prop: 1.5s linear infinite;
+}
+
+
+.blink-red {
+	animation: blink-red var(--blink-prop);
+}
+.blink-red--reverse {
+	animation: blink-red var(--blink-prop);
+	animation-direction: reverse;
+}
+.blink-blue {
+	animation: blink-blue var(--blink-prop);
+}
+.blink-blue--reverse {
+	animation: blink-blue var(--blink-prop);
+	animation-direction: reverse;
+}
+.blink-aqua {
+	animation: blink-aqua var(--blink-prop);
+}
+.blink-aqua--reverse {
+	animation: blink-aqua var(--blink-prop);
+	animation-direction: reverse;
+}
+.blink-green {
+	animation: blink-green var(--blink-prop);
+}
+.blink-orange {
+	animation: blink-orange var(--blink-prop);
+}
+.blink-lime {
+	animation: blink-lime var(--blink-prop);
+}
+
+@keyframes blink-red {
+	0%,
+	100% {
+		fill: hsl(0, 100%, 50%);
+	}
+	35% {
+		fill: hsl(56, 90%, 50%);
+	}
+	70% {
+		fill: hsl(256, 100%, 50%);
+	}
+}
+@keyframes blink-green {
+	0%,
+	100% {
+		fill: hsl(133, 69%, 51%);
+	}
+	35% {
+		fill: hsl(286, 100%, 50%);
+	}
+	70% {
+		fill: hsl(196, 100%, 50%);
+	}
+}
+@keyframes blink-blue {
+	0%,
+	100% {
+		fill: hsl(223, 100%, 44%);
+	}
+	35% {
+		fill: hsl(21, 100%, 50%);
+	}
+	70% {
+		fill: hsl(106, 70%, 50%);
+	}
+}
+@keyframes blink-orange {
+	0%,
+	100% {
+		fill: hsl(22, 100%, 50%);
+	}
+	35% {
+		fill: hsl(286, 100%, 50%);
+	}
+	70% {
+		fill: hsl(206, 70%, 50%);
+	}
+}
+@keyframes blink-lime {
+	0%,
+	100% {
+		fill: hsl(122, 70%, 50%);
+	}
+	35% {
+		fill: hsl(36, 100%, 50%);
+	}
+	70% {
+		fill: hsl(3, 60%, 50%);
+	}
+}
+@keyframes blink-aqua {
+	0%,
+	100% {
+		fill: hsl(187, 100%, 50%);
+	}
+	35% {
+		fill: hsl(66, 70%, 50%);
+	}
+	70% {
+		fill: hsl(46, 100%, 50%);
+	}
+}
+
+
 @import url("https://fonts.googleapis.com/css2?family=Yatra+One&display=swap")

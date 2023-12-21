@@ -2,6 +2,12 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { data } from './data';
 import GiftDayGrid from './components/GiftDayGrid';
 import _ from 'lodash';
+import styled from '@emotion/styled';
+import Light from './components/Light';
+
+const AppContainer = styled.main`
+  position: relative;
+` 
 
 const App = () => {
   const [giftDays, setGiftDays] = useState([]);
@@ -48,13 +54,14 @@ const App = () => {
   }, []);  
 
   return (
-    <main>
+    <AppContainer>
+      <Light />
       <GiftDayGrid
         giftDays={giftDays}
         handleLock={handleLock} 
         handleRecieve={handleRecieve}         
       />
-    </main>
+    </AppContainer>
   )
 }
 
