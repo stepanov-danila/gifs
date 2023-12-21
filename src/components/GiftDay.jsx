@@ -10,7 +10,7 @@ const Typography = styled(MuiTypography)`
   top: 15px;
   left: 15px;
   color: white;
-  font-family: 'Archivo Black', cursive;
+  font-family: 'Yatra One', sans-serif;
   font-size: 20px;
   line-height: 1;
 `
@@ -40,7 +40,7 @@ const GiftDayContainer = styled(MuiButton)`
   justify-content: center;
   border-radius: 10px;  
   position: relative;
-  font-family: 'Archivo Black', cursive;
+  font-family: 'Yatra One', sans-serif;
   
   &.Mui-disabled {
     color: #fff;

@@ -1,11 +1,10 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Archivo Black', cursive;
 }
 
 * {
   box-sizing: border-box;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Whisper&display=swap")
+@import url("https://fonts.googleapis.com/css2?family=Yatra+One&display=swap")
