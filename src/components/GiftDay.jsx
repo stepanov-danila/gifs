@@ -11,7 +11,7 @@ const Typography = styled(MuiTypography)`
   left: 15px;
   color: white;
   font-family: 'Archivo Black', cursive;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1;
 `
 
