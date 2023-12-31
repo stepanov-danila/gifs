@@ -17,6 +17,15 @@ const Typography = styled(MuiTypography)`
 `
 
 const Card = styled(MuiCard)`
+  background: #fff;
+  padding: 20px;
+
+  p {
+    font-family: 'Yatra One', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    text-wrap: balance;
+  }
 
 `
 const RecievedText = styled(MuiTypography)`
@@ -124,7 +133,7 @@ const GiftDay = ({
         onClose={handleClose}
       >
         <Card>
-          <Typography>{gift}</Typography>
+          <p>{gift.text}</p>
           <MuiButton variant='contained' onClick={() => {
             handleClose();            
             setTimeout(() => {

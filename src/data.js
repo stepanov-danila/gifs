@@ -2,7 +2,9 @@ export const data = [
   {
     id: "2",
     date: "2023-12-31",
-    gift: "Gift 2",
+    gift: {
+      text: "Твой подарок спрятян где-то в комнате! Отыщи его с помощью Дэймона :)"
+    },
     background: "#c92943",
     locked: true,
     recieved: false
@@ -10,7 +12,9 @@ export const data = [
   {
     id: "3",
     date: "2024-01-01",
-    gift: "Gift 3",
+    gift: {
+      text: "text 1"
+    },
     background: "#018667",
     locked: true,
     recieved: false
@@ -18,7 +22,9 @@ export const data = [
   {
     id: "4",
     date: "2024-01-02",
-    gift: "Gift 4",
+    gift: {
+      text: "text 1"
+    },
     background: "#018667",
     locked: true,
     recieved: false
@@ -26,7 +32,9 @@ export const data = [
   {
     id: "5",
     date: "2024-01-03",
-    gift: "Gift 5",
+    gift: {
+      text: "text 1"
+    },
     background: "#c92943",
     locked: true,
     recieved: false
@@ -34,7 +42,9 @@ export const data = [
   {
     id: "6",
     date: "2024-01-04",
-    gift: "Gift 6",
+    gift: {
+      text: "text 1"
+    },
     background: "#c92943",
     locked: true,
     recieved: false
@@ -42,7 +52,9 @@ export const data = [
   {
     id: "7",
     date: "2024-01-05",
-    gift: "Gift 7",
+    gift: {
+      text: "text 1"
+    },
     background: "#018667",
     locked: true,
     recieved: false
@@ -50,7 +62,9 @@ export const data = [
   {
     id: "8",
     date: "2024-01-06",
-    gift: "Gift 8",
+    gift: {
+      text: "text 1"
+    },
     background: "#018667",
     locked: true,
     recieved: false
@@ -58,7 +72,9 @@ export const data = [
   {
     id: "9",
     date: "2024-01-07",
-    gift: "Gift 9",
+    gift: {
+      text: "text 1"
+    },
     background: "#c92943",
     locked: true,
     recieved: false
