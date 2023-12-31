@@ -119,9 +119,7 @@ const GiftDay = ({
       && todayMonth >= gitfDayDateMonth
       && todayYear >= gitfDayDateYear
     ) {
-      setTimeout(() => {
-        handleLock(id);
-      }, 300);
+      handleLock(id);
     } 
   }, [id, date, handleLock, locked]);  
 
