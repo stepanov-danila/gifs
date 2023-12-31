@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
-import { Button as MuiButton, Card as MuiCard, Dialog, Typography as MuiTypography } from '@mui/material';
+import { Button as MuiButton, Card as MuiCard, Dialog, Typography as MuiTypography, IconButton, TextField } from '@mui/material';
 import React, { memo, useEffect, useState } from 'react';
-import { MdOutlineLockClock } from "react-icons/md";
+import { MdClose, MdOutlineLockClock } from "react-icons/md";
 import { IoMdGift } from "react-icons/io";
 import Light from './Light';
 
@@ -18,14 +18,22 @@ const Typography = styled(MuiTypography)`
 
 const Card = styled(MuiCard)`
   background: #fff;
-  padding: 20px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 
   p {
     font-family: 'Yatra One', sans-serif;
     font-size: 16px;
     line-height: 1.4;
     text-wrap: balance;
+    text-align: center;
+    margin: 0;
   }
+
+  
 
 `
 const RecievedText = styled(MuiTypography)`
@@ -56,6 +64,13 @@ const GiftDayContainer = styled(MuiButton)`
     color: #fff;
   }
 `
+
+const CloseButton = styled(IconButton)`
+  position: absolute;
+  top: 5px;
+  right: 5px;
+`
+
 const Icon = styled.div`
   margin-top: 10px;
   svg {
@@ -75,6 +90,7 @@ const GiftDay = ({
   handleRecieve
 }) => {
   const [open, setOpen] = useState(false);
+  const [giftName, setGiftName] = useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -133,13 +149,25 @@ const GiftDay = ({
         onClose={handleClose}
       >
         <Card>
+          <CloseButton onClick={handleClose}><MdClose /></CloseButton>
           <p>{gift.text}</p>
+          {
+            gift.goal && <>
+              <p>Что это?</p>
+              <TextField variant='outlined' value={giftName} onChange={(e) => {
+                setGiftName(e.target.value)
+              }} />
+            </>
+          }
+          
           <MuiButton variant='contained' onClick={() => {
             handleClose();            
             setTimeout(() => {
               handleRecieve(id);
             }, 500);
-          }}>Получить подарок</MuiButton>
+          }} disabled={gift.goal ? ![...gift.goal].some((item) => {
+            return giftName.toLowerCase() === item.toLowerCase()
+          }) : false}>Получить подарок</MuiButton>
         </Card>
       </Dialog>
     </>
