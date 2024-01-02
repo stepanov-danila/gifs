@@ -163,9 +163,7 @@ const GiftDay = ({
             setTimeout(() => {
               handleRecieve(id);
             }, 500);
-          }} disabled={gift.goal ? ![...gift.goal].some((item) => {
-            return giftName.toLowerCase() === item.toLowerCase()
-          }) : false}>Получить подарок</MuiButton>
+          }} disabled={false}>Получить подарок</MuiButton>
         </Card>
       </Dialog>
     </>
