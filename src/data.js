@@ -29,13 +29,13 @@ export const data = [
     },
     background: "#018667",
     locked: true,
-    recieved: false
+    recieved: true
   },
   {
     id: "5",
     date: "2024-01-03",
     gift: {
-      text: ""
+      text: "Услышь новый аромат, который приведет тебя к твоему подарку ;)"
     },
     background: "#c92943",
     locked: true,
