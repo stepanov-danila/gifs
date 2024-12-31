@@ -6,8 +6,8 @@ const GiftDayContainer = styled.div`
   display: grid;
   width: 100vw;
   height: 100vh;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   gap: 10px;
   padding: 10px;
 ` 

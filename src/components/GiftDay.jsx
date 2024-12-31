@@ -8,7 +8,7 @@ import Light from './Light';
 
 const Typography = styled(MuiTypography)`
   position: absolute;
-  top: 15px;
+  bottom: 15px;
   left: 15px;
   color: white;
   font-family: 'Yatra One', sans-serif;
@@ -148,22 +148,7 @@ const GiftDay = ({
       >
         <Card>
           <CloseButton onClick={handleClose}><MdClose /></CloseButton>
-          <p>{gift.text}</p>
-          {
-            gift.goal && <>
-              <p>Что это?</p>
-              <TextField variant='outlined' value={giftName} onChange={(e) => {
-                setGiftName(e.target.value)
-              }} />
-            </>
-          }
-          
-          <MuiButton variant='contained' onClick={() => {
-            handleClose();            
-            setTimeout(() => {
-              handleRecieve(id);
-            }, 500);
-          }} disabled={gift.goal ? !giftName.toLowerCase().includes(gift.goal.toLowerCase()) : false}>Получить подарок</MuiButton>
+            <img src={'https://psv4.userapi.com/s/v1/d/Ryr09VVH0fpPw7k5nklmTE-Gy_zu3b3BWWvnzgx5IqsdeMc07krKKpXeTZLDhfc02SsTrZWfGdjuuQ5A7cjO8_n6xkq56-xh7Wwrd7SyNE1G0EkjPd6OKA/frame.png'} />
         </Card>
       </Dialog>
     </>
